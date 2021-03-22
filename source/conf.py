@@ -55,6 +55,7 @@ exclude_patterns = []
 html_theme = "furo"
 html_theme_options = {
     "sidebar_hide_name": True,
+    "navigation_with_keys": True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
