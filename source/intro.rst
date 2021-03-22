@@ -8,3 +8,5 @@ En este caso, se va a realizar un proyecto completo para obtener el factorial de
 En la imagen adjunta, se puede observar de manera rápida la dinámica de las **Pruebas Unitarias TDD**:
 
 .. image:: .\TutorialPAB\TDD.png
+
+Se imprementarán un conjunto de Pruebas Unitarias TDD en **Java** para el proyecto Factorial, para el que se utilizará también **Maven** para poder importar **jUnit**
