@@ -170,15 +170,67 @@
 </div>
 <div class="section" id="viajes-en-el-tiempo">
 <h2>Viajes en el tiempo<a class="headerlink" href="#viajes-en-el-tiempo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para volver atrás en los cambios, se necesita el <strong>hash</strong> del commit al que se quiere volver. Para visualizar el log de los commits y sus respectivos hashes y comentarios:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+</pre></div>
+</div>
+<p>Teniendo el hash, para volver a ese commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --hard &lt;<span class="nb">hash</span> del commit&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="ramas">
 <h2>Ramas<a class="headerlink" href="#ramas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La utilidad de las ramas es la de hacer una bifurcación del código del proyecto, creando dos caminos paralelos en los cuales se desarrolla el código de forma independiente. Las ramas se utilizan principalmente para introducir nuevas funcionalidades en el proyecto, y de esta forma, mantener la rama principal «limpia».</p>
+<img alt="_images/branches.png" src="_images/branches.png"/>
+<p>Cuando se termina el desarrollo de la funcionalidad deseada y se quiere incluir esos cambios en la rama principal, las ramas se <strong>fusionan</strong>.</p>
+<p>Para crear una rama:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch &lt;nombre rama&gt;
+</pre></div>
+</div>
+<p>Para cambiar a una rama:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout &lt;nombre rama&gt;
+</pre></div>
+</div>
+<p>Como atajo, los dos últimos comandos se pueden acortar con:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b &lt;nombre rama&gt;
+</pre></div>
+</div>
+<p>Este comando crea una rama y se cambia.</p>
+<p>Para borrar una rama no deseada:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -d &lt;nombre rama&gt;
+</pre></div>
+</div>
+<p>Para fusionar dos ramas, estando en la rama <strong>master</strong> o <strong>main</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge &lt;nombre rama&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="repositorios-remotos">
 <h2>Repositorios remotos<a class="headerlink" href="#repositorios-remotos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es <a class="reference external" href="https://github.com/">GitHub</a>, aunque hay muchas más como <a class="reference external" href="https://about.gitlab.com/">GitLab</a> o <a class="reference external" href="https://bitbucket.org/">Bitbucker</a>.</p>
+<p>Para subir un proyecto git a un repositorio remoto, primero se debe crear el repositorio en la plataforma, el cual estará asociado a un link .git. Para añadir el repositorio remoto al proyecto:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;link .git del repositorio&gt;
+</pre></div>
+</div>
+<p>Al tener el repositorio remoto enlazado, lo siguiente es hacer realizar un <strong>push</strong>. El primer push debe especificar la rama del repositorio remoto a la que se va a subir, el comando es el siguiente:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push --set-upstream origin &lt;nombre rama&gt;
+</pre></div>
+</div>
+<p>Los siguientes push se pueden realizar sin los argumentos.</p>
 </div>
 <div class="section" id="git-clone-pull-y-fetch">
 <h2>Git clone, pull y fetch<a class="headerlink" href="#git-clone-pull-y-fetch" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora, ¿qué pasa si hace falta descargar un repositorio remoto existente para trabajar en él? Para esto, se necesita el antes mencionado link .git del repositorio. Para descargarlo en un directorio, se utiliza:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone &lt;link .git&gt;
+</pre></div>
+</div>
+<p>De esta forma el proyecto se descargará con todo el historial de cambios, como si se hubiese creado en la máquina.</p>
+<p>Si varias personas trabajan con el mismo repositorio remoto, hará falta sincronizar los cambios que hacen los demás antes. Para sincronizar:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull
+</pre></div>
+</div>
+<p>Este listado de comandos es el set básico para poder trabajar con Git, el siguiente paso es… ¡crear el proyecto!</p>
 </div>
 </div>
 
