@@ -8,13 +8,9 @@ Tutorial Java + Maven + Git + TDD
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contenido:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   intro
+   proyecto
+   git
+   tdd
