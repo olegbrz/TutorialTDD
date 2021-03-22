@@ -7,4 +7,4 @@ En este caso, se va a realizar un proyecto completo para obtener el factorial de
 
 En la imagen adjunta, se puede observar de manera rápida la dinámica de las **Pruebas Unitarias TDD**:
 
-.. image:: .\source\TDD.png
+.. image:: .\TutorialPAB\TDD.png
