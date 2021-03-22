@@ -12,4 +12,4 @@ En la imagen adjunta, se puede observar de manera rápida la dinámica de las **
 	:align: center
 	
 
-Se imprementarán un conjunto de Pruebas Unitarias TDD en **Java** para el proyecto Factorial, para el que se utilizará también **Maven** para poder importar **jUnit**
+Se imprementarán un conjunto de Pruebas Unitarias TDD en **Java** para el proyecto Factorial, para el que se utilizará también **Maven** para poder importar **jUnit** y así utilizarlas en las pruebas. El entorno de trabajo elegido será **IntelliJ IDEA**.
