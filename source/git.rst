@@ -10,7 +10,9 @@ Instalación de Git
 
 El instalador de Git se puede descargar desde `https://git-scm.com/ <https://git-scm.com/>`_.
 
-Es muy importante que Git esté incluido en el PATH del sistema, para comprobarlo, se puede ejecutar en la línea de comandos la siguiente línea:
+.. warning:: Es muy importante que Git esté incluido en el PATH del sistema.
+
+Para comprobar si git está en el PATH, se puede ejecutar en la línea de comandos la siguiente línea:
 
 .. code-block:: bash
 
@@ -120,7 +122,7 @@ Para fusionar dos ramas, estando en la rama **master** o **main**:
 Repositorios remotos
 ---------------------
 
-Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es `GitHub <https://github.com/>`_, aunque hay muchas más como `GitLab <https://about.gitlab.com/>`_ o `Bitbucker <https://bitbucket.org/>`_.
+Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es `GitHub <https://github.com/>`_, aunque hay muchas más como `GitLab <https://about.gitlab.com/>`_ o `Bitbucket <https://bitbucket.org/>`_.
 
 Para subir un proyecto git a un repositorio remoto, primero se debe crear el repositorio en la plataforma, el cual estará asociado a un link .git. Para añadir el repositorio remoto al proyecto:
 

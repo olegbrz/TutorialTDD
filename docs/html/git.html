@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="TDD" href="tdd.html" /><link rel="prev" title="Creación proyecto Java Maven" href="proyecto.html" />
 
     <meta name="generator" content="sphinx-3.5.2, furo 2021.02.28.beta28"/>
-        <title>Git - documentación de Tutorial Java + Maven + Git + TDD -</title>
+        <title>Git - Tutorial Java + Maven + Git + TDD</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=be5985a4059b5c2cd56ed0804790452beca62674">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -85,7 +85,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">documentación de Tutorial Java + Maven + Git + TDD - </div></a>
+      <a href="index.html"><div class="brand">Tutorial Java + Maven + Git + TDD</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -99,7 +99,6 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">documentación de Tutorial Java + Maven + Git + TDD - </span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Búsqueda name="q">
@@ -133,7 +132,11 @@
 <div class="section" id="instalacion-de-git">
 <h2>Instalación de Git<a class="headerlink" href="#instalacion-de-git" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El instalador de Git se puede descargar desde <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a>.</p>
-<p>Es muy importante que Git esté incluido en el PATH del sistema, para comprobarlo, se puede ejecutar en la línea de comandos la siguiente línea:</p>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Es muy importante que Git esté incluido en el PATH del sistema.</p>
+</div>
+<p>Para comprobar si git está en el PATH, se puede ejecutar en la línea de comandos la siguiente línea:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
 </pre></div>
 </div>
@@ -208,7 +211,7 @@
 </div>
 <div class="section" id="repositorios-remotos">
 <h2>Repositorios remotos<a class="headerlink" href="#repositorios-remotos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es <a class="reference external" href="https://github.com/">GitHub</a>, aunque hay muchas más como <a class="reference external" href="https://about.gitlab.com/">GitLab</a> o <a class="reference external" href="https://bitbucket.org/">Bitbucker</a>.</p>
+<p>Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es <a class="reference external" href="https://github.com/">GitHub</a>, aunque hay muchas más como <a class="reference external" href="https://about.gitlab.com/">GitLab</a> o <a class="reference external" href="https://bitbucket.org/">Bitbucket</a>.</p>
 <p>Para subir un proyecto git a un repositorio remoto, primero se debe crear el repositorio en la plataforma, el cual estará asociado a un link .git. Para añadir el repositorio remoto al proyecto:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;link .git del repositorio&gt;
 </pre></div>
