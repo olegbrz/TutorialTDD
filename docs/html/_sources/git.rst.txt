@@ -1,5 +1,5 @@
-Git
-===
+Sistemas de control de versiones: Git
+======================================
 
 Los **VSC** (version control system), son herramientas que permiten realizar control de cambios y versiones de cada proyecto de forma automática y eficiente. Un VCS realiza copias incrementales de cada archivo del proyecto de forma interna, y el usuario solo tiene que preocuparse de añadir los archivos y describir los cambios.
 
@@ -99,13 +99,13 @@ Para cambiar a una rama:
 
 	git checkout <nombre rama>
 
-Como atajo, los dos últimos comandos se pueden acortar con:
+.. tip:: Como atajo, los dos últimos comandos se pueden acortar con:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	git checkout -b <nombre rama>
+		git checkout -b <nombre rama>
 
-Este comando crea una rama y se cambia.
+	Este comando crea una rama y se cambia.
 
 Para borrar una rama no deseada:
 

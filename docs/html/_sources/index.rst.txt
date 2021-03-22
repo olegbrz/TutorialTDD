@@ -14,3 +14,5 @@ Tutorial Java + Maven + Git + TDD
    proyecto
    git
    tdd
+
+.. tip:: Para navegar entre las secciones, usa las teclas ``←`` y ``→``
