@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="tdd" href="tdd.html" /><link rel="prev" title="Creación proyecto Java Maven" href="proyecto.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="TDD" href="tdd.html" /><link rel="prev" title="Creación proyecto Java Maven" href="proyecto.html" />
 
     <meta name="generator" content="sphinx-3.5.2, furo 2021.02.28.beta28"/>
         <title>Git - documentación de Tutorial Java + Maven + Git + TDD -</title>
@@ -88,7 +88,7 @@
       <a href="index.html"><div class="brand">documentación de Tutorial Java + Maven + Git + TDD - </div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -111,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proyecto.html">Creación proyecto Java Maven</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tdd.html">tdd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdd.html">TDD</a></li>
 </ul>
 
 </div>
@@ -123,11 +123,63 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Los <strong>VSC</strong> (version control system), son herramientas que permiten realizar control de cambios y versiones de cada proyecto de forma automática y eficiente. Un VCS realiza copias incrementales de cada archivo del proyecto de forma interna, y el usuario solo tiene que preocuparse de añadir los archivos y describir los cambios.</p>
+<p>En este tutorial se va a utilizar la herramienta más popular, llamada <strong>Git</strong>.</p>
+<div class="section" id="instalacion-de-git">
+<h2>Instalación de Git<a class="headerlink" href="#instalacion-de-git" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El instalador de Git se puede descargar desde <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a>.</p>
+<p>Es muy importante que Git esté incluido en el PATH del sistema, para comprobarlo, se puede ejecutar en la línea de comandos la siguiente línea:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
+</pre></div>
+</div>
+<p>Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, si no, deberá comprobar la instalación.</p>
+</div>
+<div class="section" id="inicializacion-de-un-repositorio-local">
+<h2>Inicialización de un repositorio local<a class="headerlink" href="#inicializacion-de-un-repositorio-local" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para inicializar un repositorio local con Git, en la linea de comandos, dentro del directorio que se quiera usar para el proyecto, deberá ejecutar:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
+</pre></div>
+</div>
+<p>La salida será algo similar a <code class="docutils literal notranslate"><span class="pre">Initialized</span> <span class="pre">empty</span> <span class="pre">Git</span> <span class="pre">repository</span> <span class="pre">in</span> <span class="pre">&lt;directorio</span> <span class="pre">del</span> <span class="pre">proyecto&gt;</span></code></p>
+</div>
+<div class="section" id="anadir-modificar-y-confirmar-cambios">
+<h2>Añadir, modificar y confirmar cambios<a class="headerlink" href="#anadir-modificar-y-confirmar-cambios" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para ver el estado del repositorio y los archivos en seguimiento, ejecute:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+<p>En la salida se mostrarán los cambios nuevos que se pueden agregar y los archivos que aún no se han agregado antes.</p>
+<p>Para agregar un archivo/cambio:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add &lt;nombre del archivo&gt;
+</pre></div>
+</div>
+<p>Si el archivo fue añadido por error, se puede borrar con:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm &lt;nombre del archivo&gt;
+</pre></div>
+</div>
+<p>Para confirmar y comentar el cambio:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">"&lt;comentario&gt;"</span>
+</pre></div>
+</div>
+<p>Con estos comandos se realiza la mayor parte del workflow con Git. Cada commit lleva asociado un hash, un valor hexadecimal el cual sirve como identificador único para ese cambio.</p>
+</div>
+<div class="section" id="viajes-en-el-tiempo">
+<h2>Viajes en el tiempo<a class="headerlink" href="#viajes-en-el-tiempo" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="ramas">
+<h2>Ramas<a class="headerlink" href="#ramas" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="repositorios-remotos">
+<h2>Repositorios remotos<a class="headerlink" href="#repositorios-remotos" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="git-clone-pull-y-fetch">
+<h2>Git clone, pull y fetch<a class="headerlink" href="#git-clone-pull-y-fetch" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
 </div>
 
       </article>
@@ -139,7 +191,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">tdd</div>
+                <div class="title">TDD</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -172,8 +224,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Git</a><ul>
+<li><a class="reference internal" href="#instalacion-de-git">Instalación de Git</a></li>
+<li><a class="reference internal" href="#inicializacion-de-un-repositorio-local">Inicialización de un repositorio local</a></li>
+<li><a class="reference internal" href="#anadir-modificar-y-confirmar-cambios">Añadir, modificar y confirmar cambios</a></li>
+<li><a class="reference internal" href="#viajes-en-el-tiempo">Viajes en el tiempo</a></li>
+<li><a class="reference internal" href="#ramas">Ramas</a></li>
+<li><a class="reference internal" href="#repositorios-remotos">Repositorios remotos</a></li>
+<li><a class="reference internal" href="#git-clone-pull-y-fetch">Git clone, pull y fetch</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
