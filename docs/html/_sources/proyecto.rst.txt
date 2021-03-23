@@ -1,2 +1,2 @@
-Creación proyecto Java Maven
-============================
+Creación proyecto Maven
+=======================

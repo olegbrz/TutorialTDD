@@ -88,7 +88,7 @@
       <a href="index.html"><div class="brand">Tutorial Java + Maven + Git + TDD</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -112,7 +112,7 @@
   <p class="caption"><span class="caption-text">Contenido:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proyecto.html">Creación proyecto Java Maven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proyecto.html">Creación proyecto Maven</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Sistemas de control de versiones: Git</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Desarrollo guiado por pruebas</a></li>
 </ul>
@@ -126,11 +126,34 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="desarrollo-guiado-por-pruebas">
 <h1>Desarrollo guiado por pruebas<a class="headerlink" href="#desarrollo-guiado-por-pruebas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El desarrollo guiado por pruebas o <strong>TDD</strong> es una metodología de desarrollo de software que consiste en escribir primero pruebas (tests unitarios) del código y después el código fuente, de forma que éste tenga que satisfacer las pruebas.</p>
+<p>Con esta metodología se consigue un código más robusto, seguro y una mayor velocidad de desarrollo.</p>
+<div class="section" id="junit-y-maven">
+<h2>jUnit y Maven<a class="headerlink" href="#junit-y-maven" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>jUnit es un framework open-source de automatización de pruebas unitarias para Java. jUnit permite ejecutar los métodos de las clases Java de manera controlada, evaluando en cada una el output obtenido en base al output esperado.</p>
+<p>Para añadir jUnit al proyecto Maven, tan solo hace falta actualizar el archivo <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> generado por Maven.</p>
+<p>Las dependencias de maven se pueden encontrar en <a class="reference external" href="https://mvnrepository.com/">https://mvnrepository.com/</a>. Al seleccionar una dependencia, la propia página suministra el código a añadir para Maven, y otras herramientas como Gadle, SBT, Ivy, etc…</p>
+<p>En este caso, se va a añadir la dependencia <code class="docutils literal notranslate"><span class="pre">org.junit.jupiter</span></code> en la versión <code class="docutils literal notranslate"><span class="pre">5.6.2</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>5.6.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se tiene que actualizar la etiqueta <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> del <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>, de modo que cada dependencia vaya dentro de esas llaves. No se trata de añadir este código al archivo sin más.</p>
+</div>
+</div>
 </div>
 
       </article>
@@ -167,8 +190,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Desarrollo guiado por pruebas</a><ul>
+<li><a class="reference internal" href="#junit-y-maven">jUnit y Maven</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
