@@ -1,11 +1,12 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Sistemas de control de versiones: Git" href="git.html" /><link rel="prev" title="Introducción" href="intro.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Sistemas de control de versiones: Git" href="git.html" /><link rel="prev" title="Introducción" href="intro.html" />
 
-    <meta name="generator" content="sphinx-3.5.2, furo 2021.02.28.beta28"/>
+    <meta name="generator" content="sphinx-3.5.3, furo 2021.03.20.beta30"/>
         <title>Creación del proyecto Maven - Tutorial Java + Maven + Git + TDD</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=be5985a4059b5c2cd56ed0804790452beca62674">
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=978e1795dfe158b585dda6a8417f6411828bf3ed">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -131,17 +132,48 @@
         </label>
         <div class="section" id="creacion-del-proyecto-maven">
 <h1>Creación del proyecto Maven<a class="headerlink" href="#creacion-del-proyecto-maven" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Al haber elegido IntelliJ IDEA, habría que seguir unos pasos para crear correctamente el proyecto.</p>
+<div class="section" id="que-es-un-proyecto-maven-y-para-que-sirve">
+<h2>¿Qué es un proyecto Maven y para qué sirve?<a class="headerlink" href="#que-es-un-proyecto-maven-y-para-que-sirve" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><strong>Maven</strong> es una herramienta open-source para la gestión y construcción de proyectos Java basado en un formato XML. Se creó con el objetivo de simplificar procesos  de build (para compilar y generar ejecutables a partir de código fuente).</p>
+<p>Para ello, en Maven se definen tres ciclos de build del software con una serie de etapas diferenciadas. Por defecto tiene las siguientes etapas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Validación</strong>: Validar que el proyecto es correcto.</p></li>
+<li><p><strong>Compilación</strong>.</p></li>
+<li><p><strong>Test</strong>: Probar el código utilizando pruebas unitarias.</p></li>
+<li><p><strong>Empaquetar</strong> el código compilado y transformarlo en algún formato, por ejemplo .jar.</p></li>
+<li><p><strong>Pruebas de integración</strong>: Procesar y desplegar el código en algún entorno.</p></li>
+<li><p><strong>Verificar</strong> que el código es válido y cumple con los criterios de calidad.</p></li>
+<li><p><strong>Instalar</strong> el código en el repositorio locar para poder usarlos como dependencias de otros proyecots.</p></li>
+<li><p><strong>Desplegar</strong> el código a un entorno.</p></li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="como-crear-un-proyecto-maven-en-intellij-idea">
 <h2>¿Cómo crear un proyecto Maven en IntelliJ IDEA?<a class="headerlink" href="#como-crear-un-proyecto-maven-en-intellij-idea" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Al haber elegido IntelliJ IDEA, habría que seguir unos pasos para crear correctamente el proyecto.</p>
 <ol class="arabic">
 <li><p>Abrir el entorno y crear un nuevo proyecto.</p></li>
-<li><p>Seleccionar <em>Create form archetype</em> y, luego, <em>org.apache.maven.archetypes:maven-archetype-quickstar</em>, como se indica en la imagen siguiente.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="_images/CrearProyecto1.png"><img alt="_images/CrearProyecto1.png" class="align-center" src="_images/CrearProyecto1.png" style="width: 500px;"/></a>
-</div></blockquote>
+<li><dl>
+<dt>Seleccionar <em>Create form archetype</em> y, luego, <em>org.apache.maven.archetypes:maven-archetype-quickstar</em>, como se indica en la imagen siguiente.</dt><dd><a class="reference internal image-reference" href="_images/CrearProyecto1.png"><img alt="_images/CrearProyecto1.png" class="align-center" src="_images/CrearProyecto1.png" style="width: 500px;"/></a>
+</dd>
+</dl>
 </li>
-<li><p>Se le asigna el nombre al proyecto, en este caso será <em>Factorial TDD</em></p></li>
+<li><dl>
+<dt>Se le asigna el nombre al proyecto, en este caso será <em>FactorialTDD</em>.</dt><dd><a class="reference internal image-reference" href="_images/CrearProyecto2.png"><img alt="_images/CrearProyecto2.png" class="align-center" src="_images/CrearProyecto2.png" style="width: 500px;"/></a>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Se seleccionaría <em>Next</em> y, en la siguiente ventana, <em>Finish</em>.</dt><dd><a class="reference internal image-reference" href="_images/CrearProyecto3.png"><img alt="_images/CrearProyecto3.png" class="align-center" src="_images/CrearProyecto3.png" style="width: 500px;"/></a>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Una vez creado el proyecto, se obtendrá la estructura definida junto con el archivo <em>pom.xml</em>, en el que se encuentran las dependencias necesarias para <strong>Maven</strong>.</dt><dd><a class="reference internal image-reference" href="_images/CrearProyecto4.png"><img alt="_images/CrearProyecto4.png" class="align-center" src="_images/CrearProyecto4.png" style="width: 500px;"/></a>
+</dd>
+</dl>
+</li>
 </ol>
 </div>
 </div>
@@ -201,6 +233,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Creación del proyecto Maven</a><ul>
+<li><a class="reference internal" href="#que-es-un-proyecto-maven-y-para-que-sirve">¿Qué es un proyecto Maven y para qué sirve?</a></li>
 <li><a class="reference internal" href="#como-crear-un-proyecto-maven-en-intellij-idea">¿Cómo crear un proyecto Maven en IntelliJ IDEA?</a></li>
 </ul>
 </li>
