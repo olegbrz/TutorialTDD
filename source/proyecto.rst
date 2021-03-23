@@ -1,5 +1,5 @@
 Creación del proyecto Maven
-=======================
+============================
 
 Al haber elegido IntelliJ IDEA, habría que seguir unos pasos para crear correctamente el proyecto.
 
