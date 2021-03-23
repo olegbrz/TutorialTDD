@@ -171,6 +171,16 @@ La salida será algo así:
 
 Si sale ``BUILD SUCCESS`` y todos los tests pasados, entonces ¡enhorabuena, el desarrollo esta llegando a su fin! Si hay casos que fallan, habrá que adaptar el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.
 
+Un buen indicador de la calidad de las pruebas es la cobertura de código o code coverage. Es una medida porcentual que mide el porcentaje del código que se ha probado. Para realizar un test con cobertura en IntelliJ, hay que clicar en el botón de la barra superior de build:
+
+.. image:: assets/coverage.png
+	:align: center
+
+Al terminar los tests saldrá una tabla de resumen de la cobertura:
+
+.. image:: assets/coverage2.png
+	:align: center
+
 La última fase es limpiar el código, y dejarlo legible.
 
 .. note:: Si quiere descargar el proyecto, lo puede hacer desde el repositorio de GitHub de Antonio J. Nebro, nuestro profesor: `https://github.com/ajnebro/PAB2020 <https://github.com/ajnebro/PAB2020>`_.
