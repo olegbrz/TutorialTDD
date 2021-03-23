@@ -87,6 +87,12 @@ Teniendo el hash, para volver a ese commit:
 
 	git reset --hard <hash del commit>
 
+.. warning:: Esto descartará los cambios que no se han confirmado, para sólo navegar entre los commits, se puede utilizar 
+
+	.. code-block:: bash
+
+		git checkout <hash del commit>
+
 Ramas
 -----
 
