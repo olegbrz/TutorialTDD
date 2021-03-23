@@ -1,12 +1,11 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Sistemas de control de versiones: Git" href="git.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Sistemas de control de versiones: Git" href="git.html" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2021.03.20.beta30"/>
+    <meta name="generator" content="sphinx-3.5.2, furo 2021.02.28.beta28"/>
         <title>Desarrollo guiado por pruebas - Tutorial Java + Maven + Git + TDD</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=978e1795dfe158b585dda6a8417f6411828bf3ed">
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=be5985a4059b5c2cd56ed0804790452beca62674">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -138,7 +137,7 @@
 <h2>jUnit y Maven<a class="headerlink" href="#junit-y-maven" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>jUnit es un framework open-source de automatización de pruebas unitarias para Java. jUnit permite ejecutar los métodos de las clases Java de manera controlada, evaluando en cada una el output obtenido en base al output esperado.</p>
 <p>Para añadir jUnit al proyecto Maven, tan solo hace falta actualizar el archivo <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> generado por Maven.</p>
-<p>Las dependencias de maven se pueden encontrar en <a class="reference external" href="https://mvnrepository.com/">https://mvnrepository.com/</a>. Al seleccionar una dependencia, la propia página suministra el código a añadir para Maven, y otras herramientas como Gadle, SBT, Ivy, etc…</p>
+<p>Las dependencias de maven se pueden encontrar en <a class="reference external" href="https://mvnrepository.com/">https://mvnrepository.com/</a>. Al seleccionar una dependencia, la propia página suministra el código a añadir para Maven, y otras herramientas como <a class="reference external" href="https://gradle.org/">Gradle</a>, <a class="reference external" href="https://www.scala-sbt.org/">SBT</a>, <a class="reference external" href="https://ant.apache.org/ivy/">Ivy</a>, etc…</p>
 <p>En este caso, se va a añadir la dependencia <code class="docutils literal notranslate"><span class="pre">org.junit.jupiter</span></code> en la versión <code class="docutils literal notranslate"><span class="pre">5.6.2</span></code>.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
   <span class="nt">&lt;dependency&gt;</span>
@@ -170,34 +169,34 @@
 <h2>Definiendo las pruebas<a class="headerlink" href="#definiendo-las-pruebas" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Las pruebas se definirán en la clase <code class="docutils literal notranslate"><span class="pre">FibonacciTest</span></code>, un método para cada prueba. Es posible escribirlas todas juntas en un solo método, pero esto es una mala práctica, ya que si falla un caso, será más complicado saber cual es.</p>
 <p>En nuestro caso, para utilizar el método <code class="docutils literal notranslate"><span class="pre">compute()</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">Factorial</span></code> hace falta instanciar la clase (esto se puede «evitar» definiendo ese método como estático). Para no tener que instanciar la clase para cada prueba, se utilizará el decorador <code class="docutils literal notranslate"><span class="pre">@BeforeEach</span></code>, el cual define el método que se tendrá que ejecutar antes de cada prueba:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">FactorialTest</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="n">Factorial</span> <span class="n">factorial</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">FactorialTest</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="n">Factorial</span> <span class="n">factorial</span><span class="p">;</span>
 
   <span class="nd">@BeforeEach</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">factorial</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Factorial</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">factorial</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Factorial</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Ahora ha llegado el momento de definir las pruebas. Para esto, se utiliza el decorador <code class="docutils literal notranslate"><span class="pre">@Test</span></code>. Es una buena práctica llamar los métodos por lo que prueban. Por ejemplo: la prueba que comprueba si el factorial de 0 debe ser 1 se podría llamar</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="o">()</span> <span class="o">{}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>Para comprobar si el método devuelve el resultado esperado, se utiliza el método <code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code> el cual toma como argumentos dos valores, y los compara:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="o">()</span> <span class="o">{</span>
-  <span class="kt">long</span> <span class="n">expectedValue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-  <span class="kt">long</span> <span class="n">obtainedValue</span> <span class="o">=</span> <span class="n">factorial</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">long</span> <span class="n">expectedValue</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">long</span> <span class="n">obtainedValue</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">.</span><span class="na">compute</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-  <span class="n">assertEquals</span><span class="o">(</span><span class="n">expectedValue</span><span class="o">,</span> <span class="n">obrainedValue</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="n">assertEquals</span><span class="p">(</span><span class="n">expectedValue</span><span class="p">,</span> <span class="n">obrainedValue</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Se sigue el mismo método para los demás casos, menos el de la excepción. Para comprobar si un método lanza una excepción, en vez de <code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code> se utiliza <code class="docutils literal notranslate"><span class="pre">assertThrows()</span></code>, el cual acepta como argumento la clase de la excepción que se espera, y la función que lanza la excepción. En este caso, para el factorial de un número negativo, la prueba sería así:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOfANegativeNumberRaiseAnException</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">assertThrows</span><span class="o">(</span><span class="n">RuntimeException</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">factorial</span><span class="o">.</span><span class="na">compute</span><span class="o">(-</span><span class="mi">1</span><span class="o">));</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOfANegativeNumberRaiseAnException</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">assertThrows</span><span class="p">(</span><span class="n">RuntimeException</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">factorial</span><span class="p">.</span><span class="na">compute</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Con las pruebas listas, se puede proceder a programar la clase. En este tutorial se ha hecho un salto en el tiempo y se obtenido la función lista, pero esto no pasa en la vida real :).</p>
@@ -206,20 +205,20 @@
 <span class="cm"> *</span>
 <span class="cm"> * @author Antonio J. Nebro</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Factorial</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">long</span> <span class="nf">compute</span><span class="o">(</span><span class="kt">long</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">long</span> <span class="n">result</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">"Negative number: "</span> <span class="o">+</span> <span class="n">value</span><span class="o">)</span> <span class="o">;</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">((</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="o">))</span> <span class="o">{</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">compute</span><span class="o">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
-    <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Factorial</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">long</span> <span class="nf">compute</span><span class="p">(</span><span class="kt">long</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="n">result</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="p">(</span><span class="s">"Negative number: "</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">compute</span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -276,7 +275,11 @@
 <span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
 </pre></div>
 </div>
-<p>Si sale <code class="docutils literal notranslate"><span class="pre">BUILD</span> <span class="pre">SUCCESS</span></code> y todos los tests pasados, entonces ¡enhorabuena, el desarrollo esta llegando a su fin! Si hay casos que fallan, habrá que adaptar el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.</p>
+<p>Si sale <code class="docutils literal notranslate"><span class="pre">BUILD</span> <span class="pre">SUCCESS</span></code> y todos los tests pasados, entonces ¡enhorabuena, el desarrollo está llegando a su fin! Si hay casos que fallan, habrá que sguir desarrollando y revisando fallos en el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.</p>
+<p>Un buen indicador de la calidad de las pruebas es la cobertura de código o code coverage. Es una medida porcentual que mide el porcentaje del código que se ha probado. Para realizar un test con cobertura en IntelliJ, hay que clicar en el botón de la barra superior de build:</p>
+<img alt="_images/coverage.png" class="align-center" src="_images/coverage.png"/>
+<p>Al terminar los tests saldrá una tabla de resumen de la cobertura:</p>
+<img alt="_images/coverage2.png" class="align-center" src="_images/coverage2.png"/>
 <p>La última fase es limpiar el código, y dejarlo legible.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
