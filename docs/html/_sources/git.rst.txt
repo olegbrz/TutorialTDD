@@ -24,6 +24,12 @@ Para comprobar si git está en el PATH, se puede ejecutar en la línea de comand
 
 Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, de lo contrario, deberá comprobar la instalación.
 
+Funcionamiento de Git
+----------------------
+
+.. image:: assets/git_diagram.jpeg
+
+
 Inicialización de un repositorio local
 ---------------------------------------
 
@@ -169,3 +175,33 @@ Si varias personas trabajan con el mismo repositorio remoto, hará falta sincron
 	git pull
 
 Este listado de comandos es el set básico para poder trabajar con Git, el siguiente paso es... ¡crear el proyecto!
+
+README.md
+----------
+
+El archivo README.md es bastante importante en los repositorios, ya que describe de forma resumida (o no tan resumida) el proyecto, la guía de instalación, las dependencias, la guía de uso, licencia, errores comunes, autoría, etc...
+
+El archivo se escribe en el formato Markdown, un lenguaje de marcado sencillo que es facil de escribir y de leer.
+
+En plataformas como GitHub el archivo README.md se muestra en la página principal del repositorio.
+
+Archivo .gitignore
+-------------------
+
+En la mayoría de los proyectos, tanto los IDE, como las compilaciones y scripts generan archivos temporales o de ajustes que no son necesarios en el repositorio, para ello, Git cuenta con este archivo, en el cual se escriben los nombres o las extensiones de los archivos o carpetas que se quieren ignorar. 
+
+Es muy util para ignorar carpetas y archivos como:
+
+* Carpetas ``.idea`` de los IDE de JetBrains
+* Carpetas ``.vscode`` de Visual Studio Code
+* Carpetas ``.pycache`` que genera Python
+* Compilados ``.exe`` u otros
+
+Clientes Git gráficos
+----------------------
+
+A veces el terminal no es lo más cómodo o intuitivo, y más con herramientas tan complejas como Git. Para solucionar eso, existen herramientas que simplifican mucho el workflow con Git. Existen muchas herramientas como `Sourcetree <https://www.sourcetreeapp.com/>`_, `GitKraken <https://www.gitkraken.com/>`_, incluso el propio GitHub tiene su propia herramienta llamada `GitHub Desktop <https://desktop.github.com/>`_.
+
+Estas herramientas ofrecen una interfaz en la que se pueden seleccionar los archivos del repositorio, realizar operaciones como pull, commit, push, etc presionando un botón. Una de las utilidades más importantes son las visualizaciones de las ramas, que se ven de una manera mucho mas clara que en Git Bash. Un ejemplo de esto es GitKraken:
+
+.. image:: assets/kraken.png

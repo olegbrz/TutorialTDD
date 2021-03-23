@@ -147,6 +147,10 @@
 </div>
 <p>Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, de lo contrario, deberá comprobar la instalación.</p>
 </div>
+<div class="section" id="funcionamiento-de-git">
+<h2>Funcionamiento de Git<a class="headerlink" href="#funcionamiento-de-git" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="_images/git_diagram.jpeg" src="_images/git_diagram.jpeg"/>
+</div>
 <div class="section" id="inicializacion-de-un-repositorio-local">
 <h2>Inicialización de un repositorio local<a class="headerlink" href="#inicializacion-de-un-repositorio-local" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para inicializar un repositorio local con Git, en la linea de comandos, dentro del directorio que se quiera usar para el proyecto, deberá ejecutar:</p>
@@ -249,6 +253,29 @@
 </div>
 <p>Este listado de comandos es el set básico para poder trabajar con Git, el siguiente paso es… ¡crear el proyecto!</p>
 </div>
+<div class="section" id="readme-md">
+<h2>README.md<a class="headerlink" href="#readme-md" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El archivo README.md es bastante importante en los repositorios, ya que describe de forma resumida (o no tan resumida) el proyecto, la guía de instalación, las dependencias, la guía de uso, licencia, errores comunes, autoría, etc…</p>
+<p>El archivo se escribe en el formato Markdown, un lenguaje de marcado sencillo que es facil de escribir y de leer.</p>
+<p>En plataformas como GitHub el archivo README.md se muestra en la página principal del repositorio.</p>
+</div>
+<div class="section" id="archivo-gitignore">
+<h2>Archivo .gitignore<a class="headerlink" href="#archivo-gitignore" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En la mayoría de los proyectos, tanto los IDE, como las compilaciones y scripts generan archivos temporales o de ajustes que no son necesarios en el repositorio, para ello, Git cuenta con este archivo, en el cual se escriben los nombres o las extensiones de los archivos o carpetas que se quieren ignorar.</p>
+<p>Es muy util para ignorar carpetas y archivos como:</p>
+<ul class="simple">
+<li><p>Carpetas <code class="docutils literal notranslate"><span class="pre">.idea</span></code> de los IDE de JetBrains</p></li>
+<li><p>Carpetas <code class="docutils literal notranslate"><span class="pre">.vscode</span></code> de Visual Studio Code</p></li>
+<li><p>Carpetas <code class="docutils literal notranslate"><span class="pre">.pycache</span></code> que genera Python</p></li>
+<li><p>Compilados <code class="docutils literal notranslate"><span class="pre">.exe</span></code> u otros</p></li>
+</ul>
+</div>
+<div class="section" id="clientes-git-graficos">
+<h2>Clientes Git gráficos<a class="headerlink" href="#clientes-git-graficos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A veces el terminal no es lo más cómodo o intuitivo, y más con herramientas tan complejas como Git. Para solucionar eso, existen herramientas que simplifican mucho el workflow con Git. Existen muchas herramientas como <a class="reference external" href="https://www.sourcetreeapp.com/">Sourcetree</a>, <a class="reference external" href="https://www.gitkraken.com/">GitKraken</a>, incluso el propio GitHub tiene su propia herramienta llamada <a class="reference external" href="https://desktop.github.com/">GitHub Desktop</a>.</p>
+<p>Estas herramientas ofrecen una interfaz en la que se pueden seleccionar los archivos del repositorio, realizar operaciones como pull, commit, push, etc presionando un botón. Una de las utilidades más importantes son las visualizaciones de las ramas, que se ven de una manera mucho mas clara que en Git Bash. Un ejemplo de esto es GitKraken:</p>
+<img alt="_images/kraken.png" src="_images/kraken.png"/>
+</div>
 </div>
 
       </article>
@@ -307,12 +334,16 @@
             <ul>
 <li><a class="reference internal" href="#">Sistemas de control de versiones: Git</a><ul>
 <li><a class="reference internal" href="#instalacion-de-git">Instalación de Git</a></li>
+<li><a class="reference internal" href="#funcionamiento-de-git">Funcionamiento de Git</a></li>
 <li><a class="reference internal" href="#inicializacion-de-un-repositorio-local">Inicialización de un repositorio local</a></li>
 <li><a class="reference internal" href="#anadir-modificar-y-confirmar-cambios">Añadir, modificar y confirmar cambios</a></li>
 <li><a class="reference internal" href="#viajes-en-el-tiempo">Viajes en el tiempo</a></li>
 <li><a class="reference internal" href="#ramas">Ramas</a></li>
 <li><a class="reference internal" href="#repositorios-remotos">Repositorios remotos</a></li>
 <li><a class="reference internal" href="#git-clone-pull-y-fetch">Git clone, pull y fetch</a></li>
+<li><a class="reference internal" href="#readme-md">README.md</a></li>
+<li><a class="reference internal" href="#archivo-gitignore">Archivo .gitignore</a></li>
+<li><a class="reference internal" href="#clientes-git-graficos">Clientes Git gráficos</a></li>
 </ul>
 </li>
 </ul>
