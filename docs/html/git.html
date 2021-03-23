@@ -1,12 +1,11 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Desarrollo guiado por pruebas" href="tdd.html" /><link rel="prev" title="Creación del proyecto Maven" href="proyecto.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Desarrollo guiado por pruebas" href="tdd.html" /><link rel="prev" title="Creación del proyecto Maven" href="proyecto.html" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2021.03.20.beta30"/>
+    <meta name="generator" content="sphinx-3.5.2, furo 2021.02.28.beta28"/>
         <title>Sistemas de control de versiones: Git - Tutorial Java + Maven + Git + TDD</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=978e1795dfe158b585dda6a8417f6411828bf3ed">
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=be5985a4059b5c2cd56ed0804790452beca62674">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -133,7 +132,8 @@
         <div class="section" id="sistemas-de-control-de-versiones-git">
 <h1>Sistemas de control de versiones: Git<a class="headerlink" href="#sistemas-de-control-de-versiones-git" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Los <strong>VSC</strong> (version control system), son herramientas que permiten realizar control de cambios y versiones de cada proyecto de forma automática y eficiente. Un VCS realiza copias incrementales de cada archivo del proyecto de forma interna, y el usuario solo tiene que preocuparse de añadir los archivos y describir los cambios.</p>
-<p>En este tutorial se va a utilizar la herramienta más popular, llamada <strong>Git</strong>.</p>
+<p>En este tutorial se va a utilizar la herramienta más popular, llamada <strong>Git</strong>. Git sirve para evitar casos como estos:</p>
+<a class="reference internal image-reference" href="_images/memes.webp"><img alt="_images/memes.webp" class="align-center" src="_images/memes.webp" style="width: 300px;"/></a>
 <div class="section" id="instalacion-de-git">
 <h2>Instalación de Git<a class="headerlink" href="#instalacion-de-git" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El instalador de Git se puede descargar desde <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a>.</p>
@@ -145,7 +145,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
 </pre></div>
 </div>
-<p>Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, si no, deberá comprobar la instalación.</p>
+<p>Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, de lo contrario, deberá comprobar la instalación.</p>
 </div>
 <div class="section" id="inicializacion-de-un-repositorio-local">
 <h2>Inicialización de un repositorio local<a class="headerlink" href="#inicializacion-de-un-repositorio-local" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -216,10 +216,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge &lt;nombre rama&gt;
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Si el mismo archivo se ha modificado en dos ramas, al fusionarlas, pueden crearse conflictos, los cuales necesitan solución manual.</p>
+<a class="reference internal image-reference" href="_images/memes2.jpg"><img alt="_images/memes2.jpg" class="align-center" src="_images/memes2.jpg" style="width: 200px;"/></a>
+</div>
 </div>
 <div class="section" id="repositorios-remotos">
 <h2>Repositorios remotos<a class="headerlink" href="#repositorios-remotos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es <a class="reference external" href="https://github.com/">GitHub</a>, aunque hay muchas más como <a class="reference external" href="https://about.gitlab.com/">GitLab</a> o <a class="reference external" href="https://bitbucket.org/">Bitbucket</a>.</p>
+<p>Como se puede observar, los repositorios de Git son muy útiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Otro problema surge si se tiene que trabajar en equipo sobre un mismo repositorio. Para solventar estos problemas, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma. Allí el proyecto está mucho más seguro que solo en local y ya pueden acceder a él todas las personas que tengan una conexión a Internet.</p>
+<p>Una de estas plataformas es <a class="reference external" href="https://github.com/">GitHub</a>, aunque hay muchas más como <a class="reference external" href="https://about.gitlab.com/">GitLab</a> o <a class="reference external" href="https://bitbucket.org/">Bitbucket</a>.</p>
 <p>Para subir un proyecto git a un repositorio remoto, primero se debe crear el repositorio en la plataforma, el cual estará asociado a un link .git. Para añadir el repositorio remoto al proyecto:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;link .git del repositorio&gt;
 </pre></div>

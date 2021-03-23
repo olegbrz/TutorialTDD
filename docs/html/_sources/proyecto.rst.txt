@@ -24,7 +24,7 @@ Para ello, en Maven se definen tres ciclos de build del software con una serie d
 Al haber elegido IntelliJ IDEA, habría que seguir unos pasos para crear correctamente el proyecto.
 
 #. Abrir el entorno y crear un nuevo proyecto.
-#. Seleccionar *Create form archetype* y, luego, *org.apache.maven.archetypes:maven-archetype-quickstar*, como se indica en la imagen siguiente.
+#. Seleccionar *Create form archetype* y, luego, ``org.apache.maven.archetypes:maven-archetype-quickstart``, como se indica en la imagen siguiente.
     .. image:: ./assets/CrearProyecto1.png
         :width: 500
         :align: center

@@ -1,7 +1,7 @@
 Desarrollo guiado por pruebas
 ==============================
 
-El desarrollo guiado por pruebas o **TDD** es una metodología de desarrollo de software que consiste en escribir primero pruebas (tests unitarios) del código y después el código fuente, de forma que éste tenga que satisfacer las pruebas.
+El desarrollo guiado por pruebas o **TDD** es una metodología de desarrollo de software que consiste en escribir primero pruebas (tests unitarios) del código y después el código fuente, de forma que este tenga que satisfacer las pruebas.
 
 Con esta metodología se consigue un código más robusto, seguro y una mayor velocidad de desarrollo.
 
@@ -33,9 +33,9 @@ El siguiente paso es sincronizar las dependencias con Maven. En IntelliJ, esto s
 
 Para este tutorial, se usará una implementación de cálculo de factorial. Para ello, se creará una clase ``Factorial`` que tendrá un método ``compute()``.
 
-Para crear los tests para esta clase, en ``src/test/`` se creará otra clase llamada ``FibonacciTest``, donde se definirán las pruebas.
+Para crear los tests para esta clase, en ``src/test/`` se creará otra clase llamada ``FactorialTest``, donde se definirán las pruebas.
 
-Pra definir unas buenas pruebas, se tienen que pensar diferentes casos a los que se podrá someter el método, en este caso, al calcular el factorial, el usuario podrá introducir un número nefativo, un 0, u otros números. Teniendo esto en cuenta, se crearán las siguientes pruebas:
+Para definir unas buenas pruebas, se tienen que pensar diferentes casos a los que se podrá someter el método, en este caso, al calcular el factorial, el usuario podrá introducir un número nefativo, un 0, u otros números. Teniendo esto en cuenta, se crearán las siguientes pruebas:
 
 * 0 → 1
 * 1 → 1
@@ -46,7 +46,7 @@ Pra definir unas buenas pruebas, se tienen que pensar diferentes casos a los que
 Definiendo las pruebas
 -----------------------
 
-Las pruebas se definirán en la clase ``FibonacciTest``, un método para cada prueba. Es posible escribirlas todas juntas en un solo método, pero esto es una mala práctica, ya que si falla un caso, será más complicado saber cual es.
+Las pruebas se definirán en la clase ``FactorialTest``, un método para cada prueba. Es posible escribirlas todas juntas en un solo método, pero esto es una mala práctica, ya que si falla un caso, será más complicado saber cual es.
 
 En nuestro caso, para utilizar el método ``compute()`` de la clase ``Factorial`` hace falta instanciar la clase (esto se puede "evitar" definiendo ese método como estático). Para no tener que instanciar la clase para cada prueba, se utilizará el decorador ``@BeforeEach``, el cual define el método que se tendrá que ejecutar antes de cada prueba:
 
@@ -169,7 +169,7 @@ La salida será algo así:
 	[INFO] Finished at: 2021-03-23T13:47:45+01:00
 	[INFO] ------------------------------------------------------------------------
 
-Si sale ``BUILD SUCCESS`` y todos los tests pasados, entonces ¡enhorabuena, el desarrollo está llegando a su fin! Si hay casos que fallan, habrá que sguir desarrollando y revisando fallos en el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.
+Si sale ``BUILD SUCCESS`` y todos los tests pasados, entonces ¡enhorabuena, el desarrollo está llegando a su fin! Si hay casos que fallan, habrá que seguir desarrollando y revisando fallos en el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.
 
 Un buen indicador de la calidad de las pruebas es la cobertura de código o code coverage. Es una medida porcentual que mide el porcentaje del código que se ha probado. Para realizar un test con cobertura en IntelliJ, hay que clicar en el botón de la barra superior de build:
 

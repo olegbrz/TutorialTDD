@@ -3,7 +3,11 @@ Sistemas de control de versiones: Git
 
 Los **VSC** (version control system), son herramientas que permiten realizar control de cambios y versiones de cada proyecto de forma automática y eficiente. Un VCS realiza copias incrementales de cada archivo del proyecto de forma interna, y el usuario solo tiene que preocuparse de añadir los archivos y describir los cambios.
 
-En este tutorial se va a utilizar la herramienta más popular, llamada **Git**.
+En este tutorial se va a utilizar la herramienta más popular, llamada **Git**. Git sirve para evitar casos como estos:
+
+.. image:: /assets/memes.webp
+	:width: 300
+	:align: center
 
 Instalación de Git
 -------------------
@@ -18,7 +22,7 @@ Para comprobar si git está en el PATH, se puede ejecutar en la línea de comand
 
 	git --version
 
-Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, si no, deberá comprobar la instalación.
+Si la salida es la versión de Git, entonces Git está instalado y añadido a PATH, de lo contrario, deberá comprobar la instalación.
 
 Inicialización de un repositorio local
 ---------------------------------------
@@ -119,10 +123,19 @@ Para fusionar dos ramas, estando en la rama **master** o **main**:
 
 	git merge <nombre rama>
 
+.. warning:: Si el mismo archivo se ha modificado en dos ramas, al fusionarlas, pueden crearse conflictos, los cuales necesitan solución manual.
+
+	.. image:: /assets/memes2.jpg
+		:width: 200
+		:align: center
+
+
 Repositorios remotos
 ---------------------
 
-Como se puede observar, los repositorios de Git son muy utiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Para solventar este problema, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma y allí el proyecto está mucho más seguro que solo en local. Una de estas plataformas es `GitHub <https://github.com/>`_, aunque hay muchas más como `GitLab <https://about.gitlab.com/>`_ o `Bitbucket <https://bitbucket.org/>`_.
+Como se puede observar, los repositorios de Git son muy útiles a la hora de desarrollar un proyecto software serio. El problema de lo que se ha explicado hasta ahora es que toda la información se guarda de manera local, de este modo, si se pierde el acceso al dispositivo en el que se está desarrollando, se pierde todo el proyecto. Otro problema surge si se tiene que trabajar en equipo sobre un mismo repositorio. Para solventar estos problemas, Git soporta repositorios remotos. El proyecto se guarda en un servidor de una plataforma. Allí el proyecto está mucho más seguro que solo en local y ya pueden acceder a él todas las personas que tengan una conexión a Internet. 
+
+Una de estas plataformas es `GitHub <https://github.com/>`_, aunque hay muchas más como `GitLab <https://about.gitlab.com/>`_ o `Bitbucket <https://bitbucket.org/>`_.
 
 Para subir un proyecto git a un repositorio remoto, primero se debe crear el repositorio en la plataforma, el cual estará asociado a un link .git. Para añadir el repositorio remoto al proyecto:
 
