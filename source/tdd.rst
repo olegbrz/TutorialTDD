@@ -12,7 +12,7 @@ jUnit es un framework open-source de automatización de pruebas unitarias para J
 
 Para añadir jUnit al proyecto Maven, tan solo hace falta actualizar el archivo ``pom.xml`` generado por Maven.
 
-Las dependencias de maven se pueden encontrar en `https://mvnrepository.com/ <https://mvnrepository.com/>`_. Al seleccionar una dependencia, la propia página suministra el código a añadir para Maven, y otras herramientas como Gadle, SBT, Ivy, etc...
+Las dependencias de maven se pueden encontrar en `https://mvnrepository.com/ <https://mvnrepository.com/>`_. Al seleccionar una dependencia, la propia página suministra el código a añadir para Maven, y otras herramientas como `Gradle <https://gradle.org/>`_, `SBT <https://www.scala-sbt.org/>`_, `Ivy <https://ant.apache.org/ivy/>`_, etc...
 
 En este caso, se va a añadir la dependencia ``org.junit.jupiter`` en la versión ``5.6.2``.
 
@@ -169,7 +169,7 @@ La salida será algo así:
 	[INFO] Finished at: 2021-03-23T13:47:45+01:00
 	[INFO] ------------------------------------------------------------------------
 
-Si sale ``BUILD SUCCESS`` y todos los tests pasados, entonces ¡enhorabuena, el desarrollo esta llegando a su fin! Si hay casos que fallan, habrá que adaptar el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.
+Si sale ``BUILD SUCCESS`` y todos los tests pasados, entonces ¡enhorabuena, el desarrollo está llegando a su fin! Si hay casos que fallan, habrá que sguir desarrollando y revisando fallos en el código. De esta forma, el código resultante será mucho más robusto y satisfará los deseos del cliente.
 
 Un buen indicador de la calidad de las pruebas es la cobertura de código o code coverage. Es una medida porcentual que mide el porcentaje del código que se ha probado. Para realizar un test con cobertura en IntelliJ, hay que clicar en el botón de la barra superior de build:
 
