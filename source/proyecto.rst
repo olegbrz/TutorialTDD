@@ -43,15 +43,3 @@ Al haber elegido IntelliJ IDEA, habría que seguir unos pasos para crear correct
     .. image:: ./assets/CrearProyecto4.png
         :width: 500
         :align: center
-
-Estructura final de la carpeta src del proyecto
--------------------------------------------------
-
-* main
-  * java
-    * org.FactorialTDD
-        * Factorial
-* test
-  * java
-    * org.FactorialTDD
-        * FactorialTest
