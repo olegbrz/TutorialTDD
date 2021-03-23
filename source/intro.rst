@@ -12,7 +12,7 @@ En la imagen adjunta, se puede observar de manera rápida la dinámica **Test-Dr
 	:align: center
 	
 
-Se imprementarán un conjunto de Pruebas Unitarias en **Java** para el proyecto Factorial. También se hará uso de **Maven** para poder importar **jUnit** y así utilizarlo en las pruebas. El entorno de trabajo elegido será **IntelliJ IDEA**.
+Se imprementarán un conjunto de Pruebas Unitarias en **Java** para el proyecto Factorial. También se hará uso de **Maven** para poder importar **jUnit** y así utilizarlo en las pruebas.
 
 Para crear el proyecto será necesario tener instalado en el sistema:
 * Java 13 (o cualquier versión de Java superior a 8)
