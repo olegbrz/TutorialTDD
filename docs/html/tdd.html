@@ -180,11 +180,13 @@
 </pre></div>
 </div>
 <p>Ahora ha llegado el momento de definir las pruebas. Para esto, se utiliza el decorador <code class="docutils literal notranslate"><span class="pre">@Test</span></code>. Es una buena práctica llamar los métodos por lo que prueban. Por ejemplo: la prueba que comprueba si el factorial de 0 debe ser 1 se podría llamar</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>Para comprobar si el método devuelve el resultado esperado, se utiliza el método <code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code> el cual toma como argumentos dos valores, y los compara:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldFactorialOf0Return1</span><span class="p">()</span> <span class="p">{</span>
   <span class="kt">long</span> <span class="n">expectedValue</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
   <span class="kt">long</span> <span class="n">obtainedValue</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">.</span><span class="na">compute</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 

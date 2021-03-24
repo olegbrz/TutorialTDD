@@ -65,12 +65,14 @@ Ahora ha llegado el momento de definir las pruebas. Para esto, se utiliza el dec
 
 .. code-block:: java
 
+	@Test
 	public void shouldFactorialOf0Return1() {}
 
 Para comprobar si el método devuelve el resultado esperado, se utiliza el método ``assertEquals()`` el cual toma como argumentos dos valores, y los compara:
 
 .. code-block:: java
 
+	@Test
 	public void shouldFactorialOf0Return1() {
 	  long expectedValue = 1;
 	  long obtainedValue = factorial.compute(0);
